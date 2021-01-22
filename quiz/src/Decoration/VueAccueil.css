@@ -1,0 +1,47 @@
+.vue-accueil-html{
+    width: 100%;
+    height: 600px;
+    background-color: cadetblue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titre{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    background-color: yellow;
+}
+
+.contenue{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contenue-chat{
+    width: 15%;
+    height: 100%;
+    background-color: green;
+}
+
+.contenue-jeu{
+    width: 70%;
+    height: 100%;
+    background-color: black;
+}
+
+.contenue-info{
+    width: 15%;
+    height: 100%;
+    background-color: pink;
+}
+
+.logo{
+    
+}
