@@ -7,9 +7,12 @@ function PageConnexion() {
     return (
         <div>
             <TopPage/>
-            <div className="Page-connexion">
+            <div className="page-connexion">
                 <div className="page-connexion-body">
-                    <Formulaire className="page-connexion-formulaire"/>
+                    <div className="box-decoration">
+                        <Formulaire/>
+                    </div>
+                    
                 </div>
                 <footer className="page-connexion-piedpage"> Copyright Kenny Simon @2021</footer>
             </div>

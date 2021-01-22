@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e8577c25-7411-448e-bb1f-9095136e676b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet-Quiz.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet-Quiz.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +30,16 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.css" />
-      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/Components/Head.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageconnexion.css" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Head.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/TopPage.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/index.js" />
-      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" />
+      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" />
+      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.test.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" />
+      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nRBZCwnoyDUBDZ7vkN5K3Fdqmt" />
@@ -68,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611343078336</updated>
       <workItem from="1611343081860" duration="2624000" />
-      <workItem from="1611345741724" duration="6641000" />
+      <workItem from="1611345741724" duration="8088000" />
     </task>
     <servers />
   </component>

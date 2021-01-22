@@ -17,19 +17,27 @@
     vertical-align: center;
 }
 .page-connexion-titre {
-    
     justify-content: center;
     font-size: calc(15px + 2vmin);
     color: white;
-    
-
 }
 .page-connexion {
     text-align: center;
 }
-
 .page-connexion-formulaire {
-    background-color: #468FAB;
+    display: flex;
+    flex-direction: column;
+}
+.page-connexion-formulaire label{
+
+    align-items: flex-start;
+    justify-content: center;
+ 
+}
+.page-connexion-formulaire input {
+
+    align-items: flex-end;
+    justify-content: center;
 }
 .page-connexion-body {
     background-color: #282c34;
@@ -47,3 +55,9 @@
     text-align: center;
     min-height: 3vh;
 }
+.box-decoration {
+    background: #468FAB;
+    padding: 25px;
+    min-height: 25vh;
+    min-width: 45vh;
+}   

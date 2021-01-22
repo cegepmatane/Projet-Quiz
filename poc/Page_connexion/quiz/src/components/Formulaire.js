@@ -24,7 +24,7 @@ class Formulaire extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="page-connexion-formulaire">
                 <label>
                     Nom :
                     <input
@@ -33,7 +33,7 @@ class Formulaire extends React.Component {
                         value={this.state.nomUtilisateur}
                         onChange={this.handleChange}
                     />
-                </label><br />
+                </label><br/>
                 <label>
                     Mot de passe :
                     <input
@@ -43,7 +43,7 @@ class Formulaire extends React.Component {
                         onChange={this.handleChange}
                         type = "password"
                     />
-                </label>
+                </label><br/>
                 <input type="submit" value="Connexion" />
             </form>
         );
