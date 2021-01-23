@@ -1,9 +1,13 @@
 .vue-accueil-html{
     width: 100%;
     height: 600px;
-    background-color: cadetblue;
+    background-color: #666666;
     display: flex;
     flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
 }
 
 .titre{
@@ -12,8 +16,17 @@
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
-    background-color: yellow;
+    justify-content: center;
+    background-color: #666666;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.logo{
+    height: 10%;
+    position: absolute;
+    right: 3%;
+    top: 1%;
 }
 
 .contenue{
@@ -21,27 +34,156 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    background-color: #666666;
     justify-content: space-around;
 }
 
 .contenue-chat{
-    width: 15%;
+    width: 20%;
     height: 100%;
-    background-color: green;
+    background-color: #666666;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.chat{
+    background-color: #134f5c;
+    width: 80%;
+    height: 80%;
+    border-radius: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
 }
 
 .contenue-jeu{
-    width: 70%;
+    width: 60%;
     height: 100%;
-    background-color: black;
+    background-color: #666666;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.contenue-jeu-question{
+    background-color: #cccccc;
+    width: 80%;
+    height: 71%;
+    border-radius: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.question{
+    height: 20%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.contenue-choix-reponse{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.quiter-partie{
+    width: 35%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    margin: 1%;
+    border: 2px solid black;
+    color: black;
+    box-shadow: 2px 2px 2px black;
+}
+
+.reponse-1{
+    width: 38%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #990000;
+    margin: 2% 5%;
+    border: 2px solid black;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    box-shadow: 2px 2px 2px black;
+    font-size: x-large;
+}
+
+.reponse-2{
+    width: 38%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1c232;
+    margin: 2% 5%;
+    border: 2px solid black;
+    color: white;
+    box-shadow: 2px 2px 2px black;
+    text-shadow: 5px 5px 5px black;
+    font-size: x-large;
+}
+
+.reponse-3{
+    width: 38%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #38761d;
+    margin: 2% 5%;
+    border: 2px solid black;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    box-shadow: 2px 2px 2px black;
+    font-size: x-large;
+}
+
+.reponse-4{
+    width: 38%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #44808f;
+    margin: 2% 5%;
+    border: 2px solid black;
+    color: white;
+    box-shadow: 2px 2px 2px black;
+    text-shadow: 5px 5px 5px black;
+    font-size: x-large;
 }
 
 .contenue-info{
-    width: 15%;
+    width: 20%;
     height: 100%;
-    background-color: pink;
+    background-color: #666666;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
-.logo{
-    
+.info{
+    background-color: #a197ba;
+    width: 80%;
+    height: 80%;
+    border-radius: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
 }
