@@ -32,6 +32,7 @@ class Formulaire extends React.Component {
                         name="nomUtilisateur"
                         value={this.state.nomUtilisateur}
                         onChange={this.handleChange}
+                        className="page-connexion-formulaire-aremplir"
                     />
                 </label><br/>
                 <label>
@@ -42,9 +43,10 @@ class Formulaire extends React.Component {
                         value={this.state.motDePasse}
                         onChange={this.handleChange}
                         type = "password"
+                        className="page-connexion-formulaire-aremplir"
                     />
                 </label><br/>
-                <input type="submit" value="Connexion" />
+                <input type="submit" value="Jouer !" className="page-connexion-formulaire-bouton"/>
             </form>
         );
     }
