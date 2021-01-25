@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e8577c25-7411-448e-bb1f-9095136e676b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet-Quiz.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet-Quiz.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/testFormulaireConnection.png" beforeDir="false" afterPath="$PROJECT_DIR$/doc/testFormulaireConnection.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +33,8 @@
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.test.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" />
-      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" />
+      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nRBZCwnoyDUBDZ7vkN5K3Fdqmt" />
@@ -72,7 +70,7 @@
       <workItem from="1611345741724" duration="8088000" />
       <workItem from="1611438341746" duration="14000" />
       <workItem from="1611438421830" duration="109000" />
-      <workItem from="1611441535462" duration="1570000" />
+      <workItem from="1611441535462" duration="2518000" />
     </task>
     <servers />
   </component>
