@@ -23,8 +23,9 @@ class Formulaire extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('Le nom a été soumis : ' + this.state.nomUtilisateur + '\r et le mot de passe : ' + this.state.motDePasse );
+        //alert('Le nom a été soumis : ' + this.state.nomUtilisateur + '\r et le mot de passe : ' + this.state.motDePasse );
         //console.log(this.state.nomUtilisateur === utilisateursData[0].username && this.state.motDePasse === utilisateursData[0].password );
+        console.log("Utilisateur :" + this.state.nomUtilisateur + "motdepasse : " + this.state.motDePasse);
         this.recupUser = utilisateursData.filter((item) => {
             return item.username === this.state.nomUtilisateur;
         });
