@@ -11,7 +11,6 @@ function PageConnexion() {
                     <div className="box-decoration">
                         <Formulaire/>
                     </div>
-                    
                 </div>
                 <footer className="page-connexion-piedpage"> Copyright Kenny Simon @2021</footer>
             </div>

@@ -6,7 +6,11 @@ class Formulaire extends React.Component {
     recupUser;
     constructor(props) {
         super(props);
-        this.state = {nomUtilisateur: '',motDePasse: ''};
+        this.state = {
+            nomUtilisateur: '',
+            motDePasse: '',
+            incorrectLabel: ''
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +31,9 @@ class Formulaire extends React.Component {
         
         if(this.recupUser.length === 0 || this.state.motDePasse !== this.recupUser[0].password){
             console.log("utilisateur non existant ou mot de passe incorrect");
+            this.setState({
+                incorrectLabel: "utilisateur non existant ou mot de passe incorrect"
+            });
         }
         else{
             console.log("Mot de passe correct !");
@@ -57,6 +64,7 @@ class Formulaire extends React.Component {
                         className="page-connexion-formulaire-aremplir"
                     />
                 </label><br/>
+                <p>{this.state.incorrectLabel}</p>
                 <input type="submit" value="Jouer !" className="page-connexion-formulaire-bouton"/>
             </form>
         );
