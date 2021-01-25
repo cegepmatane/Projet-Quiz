@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e8577c25-7411-448e-bb1f-9095136e676b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet-Quiz.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet-Quiz.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Echafaud/utilisateurs.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" beforeDir="false" afterPath="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +34,9 @@
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/index.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/App.test.js" />
-      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/pageConnexion.css" />
+      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/utilisateursDAO.js" />
+      <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/PageConnexion.js" />
       <option value="$PROJECT_DIR$/poc/Page_connexion/quiz/src/components/Formulaire.js" />
     </changedPaths>
   </component>
@@ -71,6 +74,7 @@
       <workItem from="1611438341746" duration="14000" />
       <workItem from="1611438421830" duration="109000" />
       <workItem from="1611441535462" duration="2518000" />
+      <workItem from="1611596423897" duration="5680000" />
     </task>
     <servers />
   </component>

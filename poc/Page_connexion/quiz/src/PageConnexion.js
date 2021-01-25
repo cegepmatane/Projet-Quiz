@@ -2,7 +2,6 @@ import './pageConnexion.css';
 import React from "react";
 import TopPage from "./components/TopPage";
 import Formulaire from "./components/Formulaire";
-
 function PageConnexion() {
     return (
         <div>

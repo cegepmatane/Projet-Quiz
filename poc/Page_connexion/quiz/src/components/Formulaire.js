@@ -1,7 +1,9 @@
 import '../pageConnexion.css';
 import React from "react";
+import { utilisateursData } from "./utilisateurs";
 
 class Formulaire extends React.Component {
+    recupUser;
     constructor(props) {
         super(props);
         this.state = {nomUtilisateur: '',motDePasse: ''};
@@ -17,8 +19,18 @@ class Formulaire extends React.Component {
     }
 
     handleSubmit(event) {
-        // coder ici pour la vérification du mot de passe + changement de page
         alert('Le nom a été soumis : ' + this.state.nomUtilisateur + '\r et le mot de passe : ' + this.state.motDePasse );
+        //console.log(this.state.nomUtilisateur === utilisateursData[0].username && this.state.motDePasse === utilisateursData[0].password );
+        this.recupUser = utilisateursData.filter((item) => {
+            return item.username === this.state.nomUtilisateur;
+        });
+        
+        if(this.recupUser.length === 0 || this.state.motDePasse !== this.recupUser[0].password){
+            console.log("utilisateur non existant ou mot de passe incorrect");
+        }
+        else{
+            console.log("Mot de passe correct !");
+        }
         event.preventDefault();
     }
 
