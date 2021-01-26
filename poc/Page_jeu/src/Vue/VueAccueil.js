@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Decoration/VueAccueil.css';
 import LogoQuiz from '../Image/logo-quiz.png';
-import Questions from '../Componant/Questions.js';
+import Questions from '../Vue/VueQuestions.js';
 
 function VueAccueil(){
     return(
