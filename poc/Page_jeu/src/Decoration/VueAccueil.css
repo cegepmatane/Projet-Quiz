@@ -171,6 +171,23 @@ h2{
     font-size: large;
 }
 
+.reponse-desactive{
+    width: 38%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #727374;
+    margin: 2% 5%;
+    border: 2px solid black;
+    color: white;
+    box-shadow: 2px 2px 2px black;
+    text-shadow: 5px 5px 5px black;
+    font-size: large;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .contenue-info{
     width: 20%;
     height: 100%;
