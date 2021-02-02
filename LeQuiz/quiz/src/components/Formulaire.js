@@ -9,7 +9,7 @@ class Formulaire extends React.Component {
         this.state = {
             nomUtilisateur: '',
             motDePasse: '',
-            incorrectLabel: ''
+            incorrectLabel: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -26,7 +26,10 @@ class Formulaire extends React.Component {
         //alert('Le nom a été soumis : ' + this.state.nomUtilisateur + '\r et le mot de passe : ' + this.state.motDePasse );
         //console.log(this.state.nomUtilisateur === utilisateursData[0].username && this.state.motDePasse === utilisateursData[0].password );
         console.log("Utilisateur :" + this.state.nomUtilisateur + "motdepasse : " + this.state.motDePasse);
-        this.recupUser = utilisateursData.filter((item) => {
+       
+       
+       // Code avec fichier JSON
+       /* this.recupUser = utilisateursData.filter((item) => {
             return item.username === this.state.nomUtilisateur;
         });
         
@@ -38,7 +41,27 @@ class Formulaire extends React.Component {
         }
         else{
             console.log("Mot de passe correct !");
-        }
+        }*/
+        
+        
+        
+        
+        
+        //Code avec REST Api
+        
+        (async () => {
+            const res = await fetch('http://149.56.45.139:9647/getUser/'+this.state.nomUtilisateur);
+            const utilisateurData = await res.json();
+            if((typeof utilisateurData[0]) === "undefined" || utilisateurData[0].motdepasse !== this.state.motDePasse){
+                this.setState({
+                    incorrectLabel: "utilisateur non existant ou mot de passe incorrect"
+                });
+            }
+            else{
+                console.log("Utilisateur inscrit !")
+            }
+        })();
+ 
         event.preventDefault();
     }
 
@@ -55,6 +78,7 @@ class Formulaire extends React.Component {
                     value={this.state.nomUtilisateur}
                     onChange={this.handleChange}
                     className="page-connexion-formulaire-aremplir"
+                    required={true}
                 />
                 <label>
                     Mot de passe :
@@ -66,6 +90,7 @@ class Formulaire extends React.Component {
                 onChange={this.handleChange}
                 type = "password"
                 className="page-connexion-formulaire-aremplir"
+                required={true}
                 />
                 <p className="page-connexion-msgIncorrect">{this.state.incorrectLabel}</p>
                 <input type="submit" value="Jouer !" className="page-connexion-formulaire-bouton"/>
