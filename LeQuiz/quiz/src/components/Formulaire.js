@@ -45,13 +45,11 @@ class Formulaire extends React.Component {
         
         
         
-        
-        
         //Code avec REST Api
         
         (async () => {
             const res = await fetch('http://149.56.45.139:9647/getUser/'+this.state.nomUtilisateur);
-            const utilisateurData = await res.json();
+            const utilisateurData = await res.json()
             if((typeof utilisateurData[0]) === "undefined" || utilisateurData[0].motdepasse !== this.state.motDePasse){
                 this.setState({
                     incorrectLabel: "utilisateur non existant ou mot de passe incorrect"
@@ -59,8 +57,9 @@ class Formulaire extends React.Component {
             }
             else{
                 console.log("Utilisateur inscrit !")
+                // TODO : Faire le code avec React Router pour changement de pages
             }
-        })();
+        })()
  
         event.preventDefault();
     }

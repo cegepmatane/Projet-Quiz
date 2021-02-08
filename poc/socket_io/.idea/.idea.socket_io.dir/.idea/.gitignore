@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.socket_io.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\simon\RiderProjects\Projet-Quiz\poc\socket_io\.idea\.idea.socket_io.dir\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
