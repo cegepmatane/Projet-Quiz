@@ -1,4 +1,3 @@
-import React from 'react';
 import {QuestionsData} from '../data/QuestionsData';
 import QuestionModele from '../Modele/QuestionModele';
 

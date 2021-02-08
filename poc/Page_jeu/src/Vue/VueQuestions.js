@@ -1,25 +1,19 @@
 import React from 'react';
 import QuestionsDAO from '../Accesseur/QuestionsDAO';
+import GestionJeu from '../Js/GestionJeu.js';
 
-class Questions extends React.Component{
+class VueQuestions extends React.Component{
 
     constructor(){
         super();
-         this.DAO = new QuestionsDAO();
-         
-         /*setInterval(() => {
-            this.question = this.DAO.listerQuestionSuivante();
-            this.setState({
-                question: this.question.question,
-                proposition: this.question.propositions
-            })
-          }, 8000);*/
+         this.questionDAO = new QuestionsDAO();
+         this.gestionJeu = new GestionJeu();
     }
 
     state = {
-        question: 'rien',
-        proposition: ["0","1","2","3"],
-        hash: window.location.hash.substring(1),
+        question: '',
+        proposition: ["","","",""],
+        bonneReponse: "",
         estSelectionerbouton1: true,
         estSelectionerbouton2: true,
         estSelectionerbouton3: true,
@@ -28,30 +22,35 @@ class Questions extends React.Component{
 
     verifierBonneReponse = (evenementBouton) =>{
         let nomClasseBouton = evenementBouton.target.className;
-        //console.log(nomClasseBouton);
+        let bonneReponse = this.state.bonneReponse;
+        let reponseEntree1 = this.state.proposition[0];
+        let reponseEntree2 = this.state.proposition[1];
+        let reponseEntree3 = this.state.proposition[2];
+        let reponseEntree4 = this.state.proposition[3];
 
         switch (nomClasseBouton) {
             case "reponse-1":
                 this.initialiserSelectionBouton1();
-                console.log("test event 1");
+                this.gestionJeu.verifierReponse(reponseEntree1,bonneReponse);
                 break;
 
             case "reponse-2":
                 this.initialiserSelectionBouton2();
-                console.log("test event 2");
+                this.gestionJeu.verifierReponse(reponseEntree2,bonneReponse);
                 break;
 
             case "reponse-3":
                 this.initialiserSelectionBouton3();
-                console.log("test event 3");
+                this.gestionJeu.verifierReponse(reponseEntree3,bonneReponse);
                 break;
 
             case "reponse-4":
                 this.initialiserSelectionBouton4();
-                console.log("test event 4");
+                this.gestionJeu.verifierReponse(reponseEntree4,bonneReponse);
                 break;
         
             default:
+                this.initialiserSelectionParDefault();
                 break;
         }
     }
@@ -100,12 +99,13 @@ class Questions extends React.Component{
     test = () =>{
         setInterval(() => {
             this.initialiserSelectionParDefault();
-            this.question = this.DAO.listerQuestionSuivante();
+            this.question = this.questionDAO.listerQuestionSuivante();
             this.setState({
                 question: this.question.question,
-                proposition: this.question.propositions
+                proposition: this.question.propositions,
+                bonneReponse: this.question.reponse
             })
-          }, 3000);
+          }, 8000);
     }
 
     render(){
@@ -115,15 +115,15 @@ class Questions extends React.Component{
                     <h2>{this.state.question}</h2>
                 </div>
                 <div className="contenue-choix-reponse">
-                    <button className={(this.state.estSelectionerbouton1)?"reponse-1":"reponse-desactive"} onClick={(evenementBouton)=>{this.verifierBonneReponse(evenementBouton)}}> {this.state.proposition[0]}</button>
+                    <button className={(this.state.estSelectionerbouton1)?"reponse-1":"reponse-desactive"} onClick={(evenementBouton)=>{this.verifierBonneReponse(evenementBouton)}}>{this.state.proposition[0]}</button>
                     <button className={(this.state.estSelectionerbouton2)?"reponse-2":"reponse-desactive"} onClick={(evenementBouton)=>{this.verifierBonneReponse(evenementBouton)}}> {this.state.proposition[1]}</button>
                     <button className={(this.state.estSelectionerbouton3)?"reponse-3":"reponse-desactive"} onClick={(evenementBouton)=>{this.verifierBonneReponse(evenementBouton)}}> {this.state.proposition[2]}</button>
                     <button className={(this.state.estSelectionerbouton4)?"reponse-4":"reponse-desactive"} onClick={(evenementBouton)=>{this.verifierBonneReponse(evenementBouton)}}> {this.state.proposition[3]}</button>
-                    <a href="#"className="quiter-partie" onClick={this.test}>test</a>
+                    <button className="quiter-partie" onClick={this.test}>test</button>
                 </div>
             </div>
         );
     }
 }
 
-export default Questions;
+export default VueQuestions;
