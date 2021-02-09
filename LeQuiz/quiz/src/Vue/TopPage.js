@@ -1,5 +1,5 @@
-﻿import '../pageConnexion.css';
-import logo from '../logo_quiz.jpg';
+﻿import '../Decoration/pageConnexion.css';
+import logo from '../Image/logo_quiz.jpg';
 function TopPage(){
     return (
         <div>

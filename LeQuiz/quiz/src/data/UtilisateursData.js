@@ -9,7 +9,7 @@
     {
       id_utilisateur: "1",
       username: "kenny",
-      password: "motdepasse",
+      password: "azerty",
       meilleurScore: "457",
     },
     {

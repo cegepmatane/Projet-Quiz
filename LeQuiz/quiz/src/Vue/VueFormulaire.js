@@ -1,8 +1,10 @@
-import '../pageConnexion.css';
+import '../Decoration/pageConnexion.css';
 import React from "react";
-import { utilisateursData } from "./utilisateurs";
+import { utilisateursData } from "../data/UtilisateursData.js";
+import App from '../App';
+import VueAccueil from './VueAccueil';
 
-class Formulaire extends React.Component {
+class VueFormulaire extends React.Component {
     recupUser;
     constructor(props) {
         super(props);
@@ -11,7 +13,6 @@ class Formulaire extends React.Component {
             motDePasse: '',
             incorrectLabel: '',
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,10 +27,9 @@ class Formulaire extends React.Component {
         //alert('Le nom a été soumis : ' + this.state.nomUtilisateur + '\r et le mot de passe : ' + this.state.motDePasse );
         //console.log(this.state.nomUtilisateur === utilisateursData[0].username && this.state.motDePasse === utilisateursData[0].password );
         console.log("Utilisateur :" + this.state.nomUtilisateur + "motdepasse : " + this.state.motDePasse);
-       
-       
+
        // Code avec fichier JSON
-       /* this.recupUser = utilisateursData.filter((item) => {
+        this.recupUser = utilisateursData.filter((item) => {
             return item.username === this.state.nomUtilisateur;
         });
         
@@ -41,13 +41,12 @@ class Formulaire extends React.Component {
         }
         else{
             console.log("Mot de passe correct !");
-        }*/
-        
-        
-        
+            window.location.href += "accueil";
+        }
+
         //Code avec REST Api
         
-        (async () => {
+        /*(async () => {
             const res = await fetch('http://149.56.45.139:9647/getUser/'+this.state.nomUtilisateur);
             const utilisateurData = await res.json()
             if((typeof utilisateurData[0]) === "undefined" || utilisateurData[0].motdepasse !== this.state.motDePasse){
@@ -59,7 +58,7 @@ class Formulaire extends React.Component {
                 console.log("Utilisateur inscrit !")
                 // TODO : Faire le code avec React Router pour changement de pages
             }
-        })()
+        })()*/
  
         event.preventDefault();
     }
@@ -97,4 +96,4 @@ class Formulaire extends React.Component {
         );
     }
 }
-export default Formulaire
+export default VueFormulaire
