@@ -6,7 +6,7 @@ class VueConnexion extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="vue-connexion">
                 <TopPage/>
                 <div className="page-connexion">
                     <div className="page-connexion-body">

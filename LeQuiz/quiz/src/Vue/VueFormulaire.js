@@ -59,7 +59,6 @@ class VueFormulaire extends React.Component {
                 // TODO : Faire le code avec React Router pour changement de pages
             }
         })()*/
- 
         event.preventDefault();
     }
 
