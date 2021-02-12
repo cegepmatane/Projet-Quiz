@@ -32,7 +32,10 @@ const getUserByPseudo = (request, response) => {
 const createUser = (request, response) => {
   const { pseudo, motdepasse } = request.body
 
-  pool.query('INSERT INTO utilisateurs (pseudo, motdepasse) VALUES ($1, $2)', [pseudo, motdepasse], (error, results) => {
+  pool.query(
+    'INSERT INTO utilisateurs (pseudo, motdepasse) VALUES ($1, $2)',
+    [pseudo, motdepasse], 
+    (error, results) => {
     if (error) {
       throw error
     }
@@ -73,8 +76,8 @@ const updateScore = (request, response) => {
     }
   )
 }
-// Fonction delete à faire si besoin
-/*const deleteUser = (request, response) => {
+// Fonction delete
+const deleteUser = (request, response) => {
   const id = parseInt(request.params.id)
 
   pool.query('DELETE FROM utilisateurs WHERE user_id = $1', [id], (error, results) => {
@@ -83,13 +86,35 @@ const updateScore = (request, response) => {
     }
     response.status(200).send(`User deleted with ID: ${id}`)
   })
-}*/
+}
+ // Récupérer un questionnaire par rapport à son nom
+const getQuestionnairebyNom = (request, response) => {
+  const nomQuestionnaire = request.params.nomQuestionnaire
+  const requettePreparee = "SELECT * FROM "+nomQuestionnaire+ " ORDER BY id ASC";
+  pool.query(requettePreparee, (error, results) => {
+    if (error) {
+      if(error.message.indexOf("does not exist") !== -1){
+        response.status(200).json("erreur : table non existante")
+      }
+      else{
+        throw error
+      }
+      
+    }
+    else{
+      response.status(200).json(results.rows)
+    }
+  })
+
+}
 module.exports = {
   getUsers,
   getUserByPseudo,
   createUser,
   updateUser,
   updateScore,
+  deleteUser,
+  getQuestionnairebyNom,
 }
 
 

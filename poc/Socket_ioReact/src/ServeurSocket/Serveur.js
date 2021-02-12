@@ -2,7 +2,7 @@
 //const server = require('http').createServer(app);
 const io = require('socket.io')(); //(server)
 //const gestion = require('../Js/GestionJeu.js');
-
+var utilisateur = "";
 
 
 
@@ -14,12 +14,18 @@ const io = require('socket.io')(); //(server)
             socket.on('disconnect' , () => {
                 console.log("Utilisateur déconnecté");
             });
-            socket.on("nomUtilisateur", (msg) =>{
+            socket.on("message", (msg) =>{
                 //io.emit("nomUtilisateur", msg);
                 console.log("nom utilisateur : "+msg);
+                utilisateur = msg;
                 
-                setTimeout(() => {  io.emit("nomUtilisateur", msg); }, 500);
-                
+            });
+            socket.on("getNomUtilisateur", (msg) =>{
+                //io.emit("nomUtilisateur", msg);
+                console.log("nom utilisateur : "+msg);
+                utilisateur = msg;
+                io.emit("getNomUtilisateur", msg);
+
             });
         });
 
