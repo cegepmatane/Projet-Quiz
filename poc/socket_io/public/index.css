@@ -1,18 +1,21 @@
-.contenue-vue-chat{
+﻿.contenue-vue-chat{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: darkcyan;
 }
 
 .titre-chat-contenant{
     display: flex;
     justify-content: center;
+    background-color: brown;
 }
 
 .message-contenant{
     width: 100%;
     display: flex;
+    
     flex-direction: column;
 }
 
@@ -41,8 +44,4 @@ p{
 .formulaire{
     position: absolute;
     bottom: 10%;
-}
-
-hr{
-    width: 100%;
 }

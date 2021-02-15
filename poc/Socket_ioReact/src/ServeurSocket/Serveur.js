@@ -15,21 +15,14 @@ var utilisateur = "";
                 console.log("Utilisateur déconnecté");
             });
             socket.on("message", (msg) =>{
-                //io.emit("nomUtilisateur", msg);
-                console.log("nom utilisateur : "+msg);
-                utilisateur = msg;
+                console.log("message : "+msg);
+				socket.emit("message", msg);
                 
             });
-            socket.on("getNomUtilisateur", (msg) =>{
-                //io.emit("nomUtilisateur", msg);
-                console.log("nom utilisateur : "+msg);
-                utilisateur = msg;
-                io.emit("getNomUtilisateur", msg);
 
-            });
         });
 
-        const port = 8000;
+        const port = 9000;
         io.listen(port);
         console.log('listening on port ', port);
         

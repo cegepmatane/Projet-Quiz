@@ -1,23 +1,43 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/index.css">
     <title>Messagerie instantanée</title>
 </head>
 <body>
-    <div id="messages"></div>
-    <form action="">
-        <input id="msg" autocomplete="off"/><button>Envoyer</button>
+    <div class="contenue-vue-chat">
+        
+        <div class="titre-chat-contenant">
+            <h1 class="titre-chat">Le Tchat</h1>
+        </div>
+        
+        <div class="message-contenant">
+            <div id="messages" class = "utilisateur"></div>
+        </div>
+        
+    </div>
+    
+    <form action="" class="formulaire">
+        
+        <label>Pseudo</label>
+        <input id="pseudo" autocomplete="off" class="input"/>
+        <label>Message</label>
+        <input id="msg" autocomplete="off" class="input"/>
+        <button class="bouton-envoi-message">Envoyer</button>
+        
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         $(function (){
             var socket = io();
+            var message = "";
             $("form").submit(function (e) {
                 e.preventDefault();
-                
-                socket.emit("chat message", $("#msg").val());
+                message = $("#pseudo").val() + " : " + $("#msg").val();
+                socket.emit("chat message", message );
                 $("#msg").val("");
                 return false;
             });

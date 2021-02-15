@@ -1,19 +1,19 @@
 import React from 'react';
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:8000');
+//const socket = openSocket('http://localhost:8000');
 
 class VuePanneauScore extends React.Component{
     constructor(props){
         super(props);
-        socket.on("nomUtilisateur", (msg) =>{
+        /*socket.on("nomUtilisateur", (msg) =>{
             console.log("nom utilisateur : "+msg);
             this.setState({
                 utilisateur: msg
             })
-        });
+        });*/
     }
     state = {
-        utilisateur: "user1"
+        utilisateur: "user1 :"
     }
     
     render(){
