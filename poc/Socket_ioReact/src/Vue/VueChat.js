@@ -8,21 +8,42 @@ var testChangement = "";
 function MessagesDuChat(props) {
     if(props.text){
         const texte = props.text;
-        if(testChangement !== texte){
+ 
             console.log(texte)
+            /*var newTextUtilisateur = "";
+            var newTextMessage = "";
+            var newTextTest= "";
+            texte.split('\n').map(str =>
+                newTextUtilisateur = str.split('utilisateur:'),
+                newTextMessage = str.split('message:'),
 
-            const newText = texte.split('utilisateur:');
-            newText += newText.split('message:');
+                newTextTest = newTextTest +""
+            );
+            console.log("test : "+test);
+            
+            
+            for (var i = 0; i < test.length; i++) {
+                
+            }  */
+            const newText = texte.split('\n').map(str =>
+                <div className="message">
+                    <span className="utilisateur">Utilisateur :</span>
+                    <p>{str}</p>
+                    <hr></hr>
+                </div>
+            );
+            //newText += newText.split('message:');
             console.log(newText);
             testChangement = texte;
-        }
+            return newText;
+        
 
-        return <div className="message">
+
+        /*<div className="message">
             <span className="utilisateur">User 1 :</span>
             <p>{texte}</p>
             <hr></hr>
-        </div>
-        
+        </div>*/
     }
     else{
         return <div className="message">
@@ -44,11 +65,18 @@ class VueChat extends React.Component{
         };
         socket.on("message", (msg) =>{
             //console.log("message : "+msg);
-            var construireMessage= this.state.messagesAffiches + msg;
+            /*var construireMessage= this.state.messagesAffiches + msg + "\n";
             this.setState({
                 messagesAffiches: construireMessage
             })
-            MessagesDuChat(msg)
+            MessagesDuChat(msg)*/
+            var para = document.createElement("p");
+            var node = document.createTextNode(msg);
+            para.appendChild(node);
+            let message = document.getElementById("messages");
+            message.appendChild(para);
+            //const affMessage = ("<p>").text(msg);
+            //message.append(para.text(msg))
         });
         
         this.handleChange = this.handleChange.bind(this);
@@ -81,7 +109,7 @@ class VueChat extends React.Component{
             </div>
             <div className="message-contenant">
                 <MessagesDuChat text={this.state.messagesAffiches}/>
-    
+                <div id="messages"></div>
                 
             </div>
             <form className="formulaire" onSubmit={this.handleSubmit}>
