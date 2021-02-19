@@ -56,7 +56,7 @@ class VueFormulaire extends React.Component {
             }
             else{
                 console.log("Utilisateur inscrit !")
-                window.location.href += "accueil/?name="+this.state.nomUtilisateur+"&room=104";
+                window.location.href += "accueil/?name="+this.state.nomUtilisateur+"&room=chat";
             }
         })()
         event.preventDefault();

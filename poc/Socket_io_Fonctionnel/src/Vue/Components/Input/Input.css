@@ -20,8 +20,11 @@ input:focus, textarea:focus, select:focus{
   text-transform: uppercase;
   text-decoration: none;
   background: #008282;
-  padding: 20px;
   display: inline-block;
   border: none;
   width: 20%;
+}
+.sendButton img {
+  width: 80%;
+  height: 80%
 }
