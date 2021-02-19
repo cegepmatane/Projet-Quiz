@@ -2,18 +2,17 @@ import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
 
-import TextContainer from './Components/TextContainer/TextContainer';
 import Messages from './Components/Messages/Messages';
 import InfoBar from './Components/InfoBar/InfoBar';
 import Input from './Components/Input/Input';
 
 import '../Decoration/Chat.css';
 
-const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
+const ENDPOINT = 'http://localhost:5000';
 
 let socket;
 
-const Chat = ({ nameRecup,roomRecup }) => {
+const Chat = ({ }) => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
     const [users, setUsers] = useState('');
@@ -21,10 +20,8 @@ const Chat = ({ nameRecup,roomRecup }) => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        //const { name, room } = queryString.parse(location.search);
-        console.log("chat nom :"+nameRecup + " room : "+ roomRecup)
-        const name = nameRecup;
-        const room = roomRecup;
+        const { name, room } = queryString.parse(window.location.search);
+        console.log(name);
 
         socket = io(ENDPOINT);
 
@@ -36,7 +33,7 @@ const Chat = ({ nameRecup,roomRecup }) => {
                 alert(error);
             }
         });
-    }, [ENDPOINT, "?name="+name+"&room="+room]);
+    }, [ENDPOINT, window.location.search]);
 
     useEffect(() => {
         socket.on('message', message => {

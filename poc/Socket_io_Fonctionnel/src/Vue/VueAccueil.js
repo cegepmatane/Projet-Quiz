@@ -12,13 +12,8 @@ class VueAccueil extends React.Component{
         super(location);
         console.log("new VueAccueil");
         window.addEventListener("click",this.test);
-        //const { name, room } = queryString.parse(location.search);
-
-        this.state = {
-            nom: 'simon',
-            room: '104'
-        };
-        //console.log(location.search);
+        //const { name, room } = queryString.parse(window.location.search);
+        //console.log(window.location.search);
         //console.log(name+room);
     }
 
@@ -41,7 +36,7 @@ class VueAccueil extends React.Component{
                 <div className="contenue">
                     <div className="contenue-chat">
                         <div className="chat">
-                            <Chat nameRecup = {this.state.nom} roomRecup = {this.state.room}/>
+                            <Chat/>
                         </div>
                     </div>
                     <div className="contenue-jeu">
