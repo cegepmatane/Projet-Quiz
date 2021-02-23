@@ -7,7 +7,7 @@ import Input from './Components/Input/Input';
 
 import '../Decoration/Chat.css';
 
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'http://lequizdesquiz.ddns.net:5000';
 
 let socket;
 
