@@ -2,14 +2,13 @@ import React from 'react';
 import '../Decoration/VueAccueil.css';
 import LogoQuiz from '../Image/logo-quiz.png';
 import VueQuestions from '../Vue/VueQuestions.js';
-import VueChat from '../Vue/VueChat.js';
+import Chat from '../Vue/Chat.js';
 import VuePanneauScore from '../Vue/VuePanneauSocre.js';
 import GestionJeu from '../Js/GestionJeu.js';
-
 class VueAccueil extends React.Component{
 
-    constructor(){
-        super();
+    constructor(location){
+        super(location);
         console.log("new VueAccueil");
         window.addEventListener("click",this.test);
     }
@@ -33,12 +32,12 @@ class VueAccueil extends React.Component{
                 <div className="contenue">
                     <div className="contenue-chat">
                         <div className="chat">
-                            <VueChat/>
+                            <Chat/>
                         </div>
                     </div>
                     <div className="contenue-jeu">
                         <VueQuestions />
-                        <button className="quiter-partie">Quiter la partie</button>
+                        <button className="quitter-partie">Quitter la partie</button>
                     </div>
                     <div className="contenue-info">
                         <div className="info">

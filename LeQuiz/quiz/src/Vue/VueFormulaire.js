@@ -29,7 +29,7 @@ class VueFormulaire extends React.Component {
         console.log("Utilisateur :" + this.state.nomUtilisateur + "motdepasse : " + this.state.motDePasse);
 
        // Code avec fichier JSON
-        this.recupUser = utilisateursData.filter((item) => {
+        /*this.recupUser = utilisateursData.filter((item) => {
             return item.username === this.state.nomUtilisateur;
         });
         
@@ -42,11 +42,11 @@ class VueFormulaire extends React.Component {
         else{
             console.log("Mot de passe correct !");
             window.location.href += "accueil";
-        }
+        }*/
 
         //Code avec REST Api
         
-        /*(async () => {
+        (async () => {
             const res = await fetch('http://149.56.45.139:9647/getUser/'+this.state.nomUtilisateur);
             const utilisateurData = await res.json()
             if((typeof utilisateurData[0]) === "undefined" || utilisateurData[0].motdepasse !== this.state.motDePasse){
@@ -56,9 +56,9 @@ class VueFormulaire extends React.Component {
             }
             else{
                 console.log("Utilisateur inscrit !")
-                // TODO : Faire le code avec React Router pour changement de pages
+                window.location.href += "accueil/?name="+this.state.nomUtilisateur+"&room=chat";
             }
-        })()*/
+        })()
         event.preventDefault();
     }
 

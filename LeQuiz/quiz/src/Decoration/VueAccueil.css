@@ -53,14 +53,12 @@ h2{
 }
 
 .chat{
-    background-color: #134f5c;
     width: 80%;
     height: 80%;
     border-radius: 3%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid black;
 }
 
 .contenue-jeu{
@@ -98,7 +96,7 @@ h2{
     justify-content: space-between;
 }
 
-.quiter-partie{
+.quitter-partie{
     width: 35%;
     height: 5%;
     display: flex;
