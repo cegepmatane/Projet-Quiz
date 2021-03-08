@@ -20,6 +20,7 @@ const Chat = ({ }) => {
 
     useEffect(() => {
         const { name, room } = queryString.parse(window.location.search);
+        console.log(name);
 
         socket = io(ENDPOINT);
 
