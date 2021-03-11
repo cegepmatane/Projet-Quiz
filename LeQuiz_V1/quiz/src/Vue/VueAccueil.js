@@ -5,6 +5,8 @@ import VueQuestions from '../Vue/VueQuestions.js';
 import Chat from '../Vue/Chat.js';
 import VuePanneauScore from '../Vue/VuePanneauScore.js';
 import io from "socket.io-client";
+import ReactAudioPlayer from 'react-audio-player';
+import MusiqueFond from "../Sons/Puzzle-Game_Looping.mp3";
 
 //const ENDPOINT = 'http://lequizdesquiz.ddns.net:5000';
 const ENDPOINT = 'http://localhost:5000';
@@ -14,6 +16,13 @@ const VueAccueil = () =>{
 
     return(
         <div className="vue-accueil-html">
+            <ReactAudioPlayer
+                volume={0.03}
+                src={MusiqueFond}
+                autoPlay
+                loop
+                hidden
+            />
             <div className="titre">
                 <h1>Le Quiz des Quiz</h1>
             </div>

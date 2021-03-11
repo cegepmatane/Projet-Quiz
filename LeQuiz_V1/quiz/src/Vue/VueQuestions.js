@@ -4,6 +4,8 @@ import axios from 'axios';
 // import QuestionsServiceDAO from '../Accesseur/QuestionsServiceDAO';
 import GestionJeu from '../Js/GestionJeu';
 import io from "socket.io-client";
+import SonBouton from "../Sons/171697__nenadsimic__menu-selection-click.wav";
+import SonChangement from "../Sons/257357__brnck__button-click.wav";
 
 const VueQuestions = () =>{
     
@@ -24,7 +26,10 @@ const VueQuestions = () =>{
     const [proposition3, setProposition3] = useState('');
     const [proposition4, setProposition4] = useState('');
     const [listeQuestions, setListeQuestions] = useState({ questions: [] });
-
+    const sonClick = new Audio(SonBouton);
+    sonClick.volume = 0.4;
+    const sonChangement = new Audio(SonChangement);
+    sonChangement.volume = 0.2;
     const fetchData = useRef(() => {});
 
     fetchData.current = async () => {
@@ -52,6 +57,7 @@ const VueQuestions = () =>{
     });
 
     const afficherQuestionsParId = (index) =>{
+        sonChangement.play();
         setQuestion(listeQuestions[index].question);
         setProposition1(listeQuestions[index].proposition1);
         setProposition2(listeQuestions[index].proposition2);
@@ -61,6 +67,7 @@ const VueQuestions = () =>{
     }
     
     const verifierBonneReponse = (evenementBouton) =>{
+        sonClick.play();
         let nomClasseBouton = evenementBouton.target.className;
         let bonneReponse = bonneReponseModel;
         let reponseEntree1 = proposition1;
