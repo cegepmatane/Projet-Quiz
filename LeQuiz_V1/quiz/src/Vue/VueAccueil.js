@@ -3,7 +3,7 @@ import '../Decoration/VueAccueil.css';
 import LogoQuiz from '../Image/logo-quiz.png';
 import VueQuestions from '../Vue/VueQuestions.js';
 import Chat from '../Vue/Chat.js';
-import VuePanneauScore from '../Vue/VuePanneauSocre.js';
+import VuePanneauScore from '../Vue/VuePanneauScore.js';
 import io from "socket.io-client";
 
 //const ENDPOINT = 'http://lequizdesquiz.ddns.net:5000';

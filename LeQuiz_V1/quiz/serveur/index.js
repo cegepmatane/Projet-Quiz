@@ -10,7 +10,7 @@ const router = require('./router');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-
+var tableauScores= [];
 const PORT = process.env.PORT || 5000;
 let index ;
 
@@ -52,8 +52,22 @@ io.on('connect', (socket) => {
 
     callback();
   });
+  
+  socket.on('addScore', (message, callback) => {
+    const user = getUser(socket.id);
+    tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name);
+    if(tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name) === -1){
+      tableauScores.push({"pseudo" : user.name,score : 0});
+    }
+    tableauScores[tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name)].score += parseInt(message);
+    //console.log(tableauScores);
+    io.to(user.room).emit('changementPanneauScores', { user: user.name, tableauScores: tableauScores });
+
+    callback();
+  });
 
   socket.on('start', () => {
+    tableauScores= [];
       setInterval(() => {
         index = getRandomInt(29);
         socket.broadcast.emit('startGame', index);
