@@ -29,8 +29,9 @@ app.use(cors());
 app.use(router);
 
 io.on('connect', (socket) => {
-
+//console.log(socket.id);
   socket.on('join', ({ name, room }, callback) => {
+    console.log(name, room);
     const { error, user } = addUser({ id: socket.id, name, room });
 
     if(error) return callback(error);
@@ -53,21 +54,25 @@ io.on('connect', (socket) => {
     callback();
   });
   
-  socket.on('addScore', (message, callback) => {
+  socket.on('addScore', (message) => {
+    //console.log(socket.id);
     const user = getUser(socket.id);
-    tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name);
+    //console.log(user);
+    //tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name);
     if(tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name) === -1){
+      console.log("if tableauScores");
       tableauScores.push({"pseudo" : user.name,score : 0});
+      console.log(tableauScores);
     }
     tableauScores[tableauScores.map(function(e) { return e.pseudo; }).indexOf(user.name)].score += parseInt(message);
     //console.log(tableauScores);
-    io.to(user.room).emit('changementPanneauScores', { user: user.name, tableauScores: tableauScores });
-
-    callback();
+    //io.to(user.room).emit('changementPanneauScores', { user: user.name, tableauScores: tableauScores });
+    socket.broadcast.emit('changementPanneauScores', { user: user.name, tableauScores: tableauScores });
+    //callback();
   });
 
   socket.on('start', () => {
-    tableauScores= [];
+    tableauScores = [];
       setInterval(() => {
         index = getRandomInt(29);
         socket.broadcast.emit('startGame', index);

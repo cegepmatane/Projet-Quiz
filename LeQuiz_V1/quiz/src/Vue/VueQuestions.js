@@ -2,18 +2,21 @@ import React, { useState, useEffect, useRef }  from 'react';
 import axios from 'axios';
 //import QuestionsDAO from '../Accesseur/QuestionsDAO';
 // import QuestionsServiceDAO from '../Accesseur/QuestionsServiceDAO';
+import VuePanneauScore from '../Vue/VuePanneauScore';
 import GestionJeu from '../Js/GestionJeu';
 import io from "socket.io-client";
 import SonBouton from "../Sons/171697__nenadsimic__menu-selection-click.wav";
 import SonChangement from "../Sons/257357__brnck__button-click.wav";
-
+import queryString from 'query-string';
+const ENDPOINT = 'http://localhost:5000';
+let socket;
 const VueQuestions = () =>{
     
     const gestionJeu = new GestionJeu();
     //const ENDPOINT = 'http://lequizdesquiz.ddns.net:5000';
-    const ENDPOINT = 'http://localhost:5000';
     const URL = 'http://lequizdesquiz.tikenix.me:9647/getQuestionnaire/questionnaire_star_wars';
-    let socket = io(ENDPOINT);
+    const [name, setName] = useState('');
+    const [room, setRoom] = useState('');
     const [estChargee, setEstChargee] = useState(false);
     const [estSelectionerbouton1, setEstSelectionerbouton1] = useState(Boolean);
     const [estSelectionerbouton2, setEstSelectionerbouton2] = useState(Boolean);
@@ -30,6 +33,7 @@ const VueQuestions = () =>{
     sonClick.volume = 0.4;
     const sonChangement = new Audio(SonChangement);
     sonChangement.volume = 0.2;
+
     const fetchData = useRef(() => {});
 
     fetchData.current = async () => {
@@ -39,6 +43,23 @@ const VueQuestions = () =>{
             console.error(erreur);
         });
     };
+
+    useEffect(() => {
+        console.log("join")
+        const { name, room } = queryString.parse(window.location.search);
+        console.log(name , room);
+
+        setRoom(room);
+        setName(name);
+
+        socket = io(ENDPOINT);
+
+        socket.emit('join', { name, room }, (error) => {
+            if(error) {
+                alert(error);
+            }
+        });
+    }, [ENDPOINT, window.location.search]);
 
     useEffect(() => {
         fetchData.current().then(data => {
@@ -55,6 +76,12 @@ const VueQuestions = () =>{
             }
         });
     });
+
+    const sendMessage = () => {
+        console.log("d dedans le send");
+        console.log(socket);
+        socket.emit('addScore', "1");
+    }
 
     const afficherQuestionsParId = (index) =>{
         sonChangement.play();
@@ -78,22 +105,34 @@ const VueQuestions = () =>{
         switch (nomClasseBouton) {
             case "reponse-1":
                 initialiserSelectionBouton1();
-                gestionJeu.verifierReponse(reponseEntree1,bonneReponse);
+                if(gestionJeu.verifierReponse(reponseEntree1,bonneReponse)){
+                    console.log('c dedans');
+                    sendMessage();
+                }
                 break;
 
             case "reponse-2":
                 initialiserSelectionBouton2();
-                gestionJeu.verifierReponse(reponseEntree2,bonneReponse);
+                 if(gestionJeu.verifierReponse(reponseEntree2,bonneReponse)){
+                    console.log('c dedans');
+                    sendMessage();
+                }
                 break;
 
             case "reponse-3":
                 initialiserSelectionBouton3();
-                gestionJeu.verifierReponse(reponseEntree3,bonneReponse);
+                if(gestionJeu.verifierReponse(reponseEntree3,bonneReponse)){
+                    console.log('c dedans');
+                    sendMessage();
+                }
                 break;
 
             case "reponse-4":
                 initialiserSelectionBouton4();
-                gestionJeu.verifierReponse(reponseEntree4,bonneReponse);
+                 if(gestionJeu.verifierReponse(reponseEntree4,bonneReponse)){
+                    console.log('c dedans');
+                    sendMessage();
+                }
                 break;
         
             default:
