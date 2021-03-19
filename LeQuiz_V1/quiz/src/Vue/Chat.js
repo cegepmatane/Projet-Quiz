@@ -11,6 +11,8 @@ const ENDPOINT = 'http://lequizdesquiz.tikenix.me:5000/';
 
 let socket;
 
+//socket = io(ENDPOINT);
+
 const Chat = ({ }) => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');

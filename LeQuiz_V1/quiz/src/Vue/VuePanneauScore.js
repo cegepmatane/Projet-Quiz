@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
 
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'http://lequizdesquiz.tikenix.me:4000';
 
 let socket;
 socket = io(ENDPOINT);
@@ -16,7 +16,7 @@ const VuePanneauScore = ({ }) => {
 
     useEffect(() => {
         socket.on("changementPanneauScores", (data) => {
-            console.log(data.tableauScores);
+            //console.log(data.tableauScores);
             setAffichageScores(data.tableauScores);
         });
     });

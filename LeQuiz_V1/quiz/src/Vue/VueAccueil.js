@@ -8,8 +8,7 @@ import io from "socket.io-client";
 import ReactAudioPlayer from 'react-audio-player';
 import MusiqueFond from "../Sons/Puzzle-Game_Looping.mp3";
 
-//const ENDPOINT = 'http://lequizdesquiz.ddns.net:5000';
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'http://lequizdesquiz.tikenix.me:4000';
 let socket = io(ENDPOINT);
 
 const VueAccueil = () =>{

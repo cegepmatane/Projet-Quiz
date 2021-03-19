@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useRef }  from 'react';
 import axios from 'axios';
-//import QuestionsDAO from '../Accesseur/QuestionsDAO';
-// import QuestionsServiceDAO from '../Accesseur/QuestionsServiceDAO';
-import VuePanneauScore from '../Vue/VuePanneauScore';
 import GestionJeu from '../Js/GestionJeu';
 import io from "socket.io-client";
 import SonBouton from "../Sons/171697__nenadsimic__menu-selection-click.wav";
 import SonChangement from "../Sons/257357__brnck__button-click.wav";
 import queryString from 'query-string';
-const ENDPOINT = 'http://localhost:5000';
+
+const ENDPOINT = 'http://lequizdesquiz.tikenix.me:4000';
 let socket;
+socket = io(ENDPOINT);
+
 const VueQuestions = () =>{
     
     const gestionJeu = new GestionJeu();
-    //const ENDPOINT = 'http://lequizdesquiz.ddns.net:5000';
     const URL = 'http://lequizdesquiz.tikenix.me:9647/getQuestionnaire/questionnaire_star_wars';
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
@@ -45,14 +44,10 @@ const VueQuestions = () =>{
     };
 
     useEffect(() => {
-        console.log("join")
         const { name, room } = queryString.parse(window.location.search);
-        console.log(name , room);
 
         setRoom(room);
         setName(name);
-
-        socket = io(ENDPOINT);
 
         socket.emit('join', { name, room }, (error) => {
             if(error) {
@@ -78,8 +73,6 @@ const VueQuestions = () =>{
     });
 
     const sendMessage = () => {
-        console.log("d dedans le send");
-        console.log(socket);
         socket.emit('addScore', "1");
     }
 
@@ -106,15 +99,13 @@ const VueQuestions = () =>{
             case "reponse-1":
                 initialiserSelectionBouton1();
                 if(gestionJeu.verifierReponse(reponseEntree1,bonneReponse)){
-                    console.log('c dedans');
                     sendMessage();
                 }
                 break;
 
             case "reponse-2":
                 initialiserSelectionBouton2();
-                 if(gestionJeu.verifierReponse(reponseEntree2,bonneReponse)){
-                    console.log('c dedans');
+                if(gestionJeu.verifierReponse(reponseEntree2,bonneReponse)){
                     sendMessage();
                 }
                 break;
@@ -122,15 +113,13 @@ const VueQuestions = () =>{
             case "reponse-3":
                 initialiserSelectionBouton3();
                 if(gestionJeu.verifierReponse(reponseEntree3,bonneReponse)){
-                    console.log('c dedans');
                     sendMessage();
                 }
                 break;
 
             case "reponse-4":
                 initialiserSelectionBouton4();
-                 if(gestionJeu.verifierReponse(reponseEntree4,bonneReponse)){
-                    console.log('c dedans');
+                if(gestionJeu.verifierReponse(reponseEntree4,bonneReponse)){
                     sendMessage();
                 }
                 break;
